@@ -1,0 +1,14 @@
+# Project place file
+/untilted-game.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+sourcemap.json
+
+# Pesde / Packages
+.pesde/
+luau_packages/
+roblox_packages/
+lune_packages/
