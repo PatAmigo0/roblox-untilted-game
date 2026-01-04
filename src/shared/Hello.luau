@@ -1,3 +1,1 @@
-return function()
-	print("Hello, world!")
-end
+local myTestVariable = 10

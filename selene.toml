@@ -1,0 +1,12 @@
+std = "roblox"
+
+exclude = [
+    ".pesde/**",
+    "roblox_packages/**",
+    "node_modules/**",
+    "lune_packages/**",
+    "luau_packages/**",
+]
+
+[rules]
+incorrect_standard_library_use = "allow"
