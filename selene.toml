@@ -6,6 +6,8 @@ exclude = [
     "node_modules/**",
     "lune_packages/**",
     "luau_packages/**",
+    "**/.pesde/**",
+    "**/roblox_packages/**",
 ]
 
 [rules]

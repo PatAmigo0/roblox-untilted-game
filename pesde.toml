@@ -16,7 +16,7 @@ roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau
 sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
 
 [dependencies]
-promise = { wally = "wally#evaera/promise", version = "^4.0.0" }
+promise = { wally = "evaera/promise", version = "^4.0.0" }
 unzip = { name = "0x5eal/unzip", version = "^0.2.0", target = "luau" }
 greentea_luau = { name = "jiwonz/greentea_luau", version = "^0.2.0", target = "luau" }
 luau_disk = { name = "jiwonz/luau_disk", version = "^0.2.0", target = "luau" }
@@ -25,6 +25,9 @@ react-roblox = { wally = "jsdotlua/react-roblox", version = "^17.2.1" }
 sift = { wally = "csqrl/sift", version = "^0.0.11" }
 bytenet = { wally = "ffrostflame/bytenet", version = "^0.4.6" }
 trove = { wally = "sleitnick/trove", version = "^1.8.0" }
+typed-promise = { wally = "lukadev-0/typed-promise", version = "^4.0.2" }
+logging = { wally = "ozzypig/logging", version = "^0.3.0" }
+
 
 [dev_dependencies]
 scripts = { name = "pesde/scripts_rojo", version = "^0.2.0", target = "lune" }

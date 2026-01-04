@@ -27,6 +27,14 @@
       }
     },
 
+    "ServerStorage": {
+      "$path": "src/storage"
+    },
+
+    "StarterGui": {
+      "$path": "src/interface"
+    },
+
     "Workspace": {
       "$properties": {
         "FilteringEnabled": true
