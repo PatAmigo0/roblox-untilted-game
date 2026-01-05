@@ -12,3 +12,4 @@ sourcemap.json
 luau_packages/
 roblox_packages/
 lune_packages/
+modules/

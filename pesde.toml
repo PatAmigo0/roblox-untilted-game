@@ -26,7 +26,7 @@ sift = { wally = "csqrl/sift", version = "^0.0.11" }
 bytenet = { wally = "ffrostflame/bytenet", version = "^0.4.6" }
 trove = { wally = "sleitnick/trove", version = "^1.8.0" }
 typed-promise = { wally = "lukadev-0/typed-promise", version = "^4.0.2" }
-logging = { wally = "ozzypig/logging", version = "^0.3.0" }
+typed_logger = { name = "patamigo0/typed_logger", version = "^0.1.0" }
 
 
 [dev_dependencies]

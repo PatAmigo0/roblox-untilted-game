@@ -1,11 +1,9 @@
-local ProcessInstancePhysicsService = game:GetService("ProcessInstancePhysicsService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RobloxPackages = ReplicatedStorage.RobloxPackages
 local Shared = ReplicatedStorage.Shared
 
-local Logger = require(RobloxPackages.logging)
-local Ion = require(Shared.Ion)
+local Loom = require(Shared.Loom)
 
-print(Logger.Level)
-
-Ion:Start()
+Loom.Start():andThen(function()
+	print("Ion started successfully!")
+end)
