@@ -13,8 +13,12 @@ local Promise = Vendors.Promise
 	Core
 ]=]
 local Core = require(script.Core)
+
+local ControllerManager = Core.ControllerManager
 local ServiceManager = Core.ServiceManager
+
 local Service = Core.Service
+local Controller = Core.Controller
 
 local Loom = {}
 Loom.ByteNet = Vendors.ByteNet
@@ -25,8 +29,14 @@ Loom.Enums = {
 
 function Loom.CreateService(def: Types.ServiceDef): Types.Service
 	local newService = Service.new(def)
-	ServiceManager.Register(newService)
-	return newService :: any
+
+	return ServiceManager.Register(newService) :: any
+end
+
+function Loom.CreateController(def: any): Types.Controller
+	local newController = Controller.new(def)
+
+	return ControllerManager.Register(newController) :: any
 end
 
 function Loom.Start()

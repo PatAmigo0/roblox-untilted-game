@@ -1,14 +1,22 @@
 --!strict
 
-local ServiceModule = require(script.Service)
-local LoomMemberModule = require(script.LoomMember)
-local _LoomTypeModule = require(script.Parent.Enums.LoomTypeEnum)
+local PublicTypes = require(script.Public)
+local PrivateTypes = require(script.Private)
 
-export type LoomType = typeof(_LoomTypeModule)
+-- Public
+export type Service = PublicTypes.Service
+export type ServiceDef = PublicTypes.ServiceDef
+export type Controller = PublicTypes.Controller
+export type PacketDef = PublicTypes.PacketDef
 
-export type Service = ServiceModule.Service
-export type ServiceDef = ServiceModule.ServiceDef
+-- Private
+export type LoomMember = PrivateTypes.LoomMember
+export type LoomManager<T> = PrivateTypes.LoomManager<T>
+export type BuilderOptions = PrivateTypes.BuilderOptions
 
-export type LoomMember = LoomMemberModule.LoomMember
+-- Lib Types
+export type ByteNetSchema = PrivateTypes.ByteNetSchema
+export type ByteNetPacket<T> = PrivateTypes.ByteNetPacket<T>
+export type ByteNet = PrivateTypes.ByteNet
 
 return nil
