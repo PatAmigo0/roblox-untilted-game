@@ -20,22 +20,6 @@ TestService.Money = 0
 
 function TestService:LoomInit()
 	self:AddMoney(10)
-	task.spawn(function()
-		self.Client.TestMethod.listen(function(data: number, player: Player?)
-			if not player then
-				return
-			end
-
-			print(`Recieved data [{data}] from {player.PartyId}`)
-		end)
-
-		while task.wait(3) do
-			print("Sending data to clients...")
-			for _ = 0, 10 do
-				self.Client.TestMethod.sendToAll(2)
-			end
-		end
-	end)
 end
 
 function TestService:LoomStart()

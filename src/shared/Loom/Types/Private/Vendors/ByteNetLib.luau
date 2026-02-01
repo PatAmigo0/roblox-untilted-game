@@ -1,6 +1,6 @@
 --!strict
 
--- Define the shape of a ByteNet Schema (read/write objects)
+-- Shape of a ByteNet Schema (read/write objects)
 export type dataTypeInterface<T> = {
 	write: (value: T) -> (),
 	read: (b: buffer, cursor: number) -> (T, number),
@@ -10,9 +10,9 @@ export type dataTypeInterface<T> = {
 -- Alias
 export type Schema = dataTypeInterface<any>
 
--- Define the props for creating a packet
+-- Props for creating a packet
 export type packetProps<T> = {
-	value: dataTypeInterface<T>, -- pass the Schema here
+	value: dataTypeInterface<T>,
 	reliabilityType: ("reliable" | "unreliable")?,
 	callbackBehavior: {
 		spawnThread: boolean,
@@ -20,7 +20,7 @@ export type packetProps<T> = {
 	}?,
 }
 
--- Define the Packet object
+-- Packet object
 export type Packet<T> = {
 	sendToAll: (data: T) -> (),
 	sendTo: (data: T, target: Player) -> (),
@@ -32,7 +32,7 @@ export type Packet<T> = {
 	listen: (callback: (data: T, player: Player?) -> ()) -> (),
 }
 
--- Define the ByteNet
+-- ByteNet
 export type ByteNet = {
 	definePacket: <T>(props: packetProps<T>) -> Packet<T>,
 	defineNamespace: <T>(name: string, namespace: () -> T) -> T,

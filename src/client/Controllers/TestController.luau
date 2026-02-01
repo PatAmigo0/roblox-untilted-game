@@ -21,8 +21,6 @@ function TestController:LoomInit()
 	print("Test controller is initializing")
 	self.Client.TestMethod.listen(function(data)
 		print("[Client] Received packet from server:", data)
-
-		self.Client.TestMethod.send(data + 100)
 	end)
 end
 

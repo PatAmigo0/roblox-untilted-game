@@ -43,22 +43,20 @@ local function initializeByteNet(def: any)
 				})
 				packets[methodName] = newPacket
 			end
+
 			return packets
 		end)
 
 		for methodName, packet in pairs(registeredPackets) do
-			if type(packet) == "function" then
-				clientMap[methodName] = packet()
-			else
-				clientMap[methodName] = packet
-			end
+			local normalizedPacket = type(packet) == "function" and packet() or packet
+			clientMap[methodName] = normalizedPacket
 		end
 	end
 end
 
 --- Use with "!strict" enabled.
 --- Helps to make sure that your schema definition is correct
-function Loom.Definition<T>(def: T & Types.ServiceDef): Types.ServiceDef & T
+function Loom.Definition<T>(def: T & Types.ServiceDef): T & Types.ServiceDef
 	return def
 end
 
