@@ -1,4 +1,5 @@
 --!strict
+
 local LoomRoot = script.Parent.Parent.Parent.Parent -- Loom/Types/Public/Controller/<script>
 
 -- selene: allow(unused_variable)

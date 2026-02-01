@@ -7,7 +7,7 @@ local PrivateTypes = require(script.Private)
 export type Service = PublicTypes.Service
 export type ServiceDef = PublicTypes.ServiceDef
 export type Controller = PublicTypes.Controller
-export type PacketDef = PublicTypes.PacketDef
+export type PacketDef<T> = PublicTypes.PacketDef<T>
 
 -- Private
 export type LoomMember = PrivateTypes.LoomMember
@@ -18,5 +18,6 @@ export type BuilderOptions = PrivateTypes.BuilderOptions
 export type ByteNetSchema = PrivateTypes.ByteNetSchema
 export type ByteNetPacket<T> = PrivateTypes.ByteNetPacket<T>
 export type ByteNet = PrivateTypes.ByteNet
+export type Packet<T> = PrivateTypes.Packet<T>
 
 return nil

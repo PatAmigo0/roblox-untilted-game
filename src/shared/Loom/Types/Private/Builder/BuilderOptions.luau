@@ -1,3 +1,5 @@
+--!strict
+
 export type BuilderOptions = {
 	Name: "Service" | "Controller",
 	InitMethod: string,

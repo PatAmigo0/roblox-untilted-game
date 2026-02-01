@@ -21,7 +21,7 @@ export type packetProps<T> = {
 }
 
 -- Define the Packet object
-type Packet<T> = {
+export type Packet<T> = {
 	sendToAll: (data: T) -> (),
 	sendTo: (data: T, target: Player) -> (),
 	sendToList: (data: T, targets: { Player }) -> (),

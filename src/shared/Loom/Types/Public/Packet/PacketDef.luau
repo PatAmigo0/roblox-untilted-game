@@ -1,16 +1,17 @@
 --!strict
 
-local LoomRoot = script.Parent.Parent
-local _ReliabilityEnum = require(LoomRoot.Enums.ReliabilityTypeEnum)
+local LoomRoot = script.Parent.Parent.Parent.Parent
+--selene: allow(unused_variable)
+local Enums = require(LoomRoot.Enums)
 
-local ByteNetLib = require(script.Parent.ByteNetLib)
+local ByteNetLib = require(LoomRoot.Types.Private.Vendors.ByteNetLib)
 
-export type ReliabilityEnumModule = typeof(_ReliabilityEnum)
+export type ReliabilityEnumModule = typeof(Enums.ReliabilityTypeEnum)
 export type ReliabilityType = "reliable" | "unreliable"
 
-export type PacketDef = {
+export type PacketDef<T> = {
 	ReliabilityType: ReliabilityType,
-	Schema: ByteNetLib.Schema,
+	Schema: ByteNetLib.dataTypeInterface<T>,
 }
 
 return nil

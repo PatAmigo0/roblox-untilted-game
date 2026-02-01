@@ -27,6 +27,7 @@ bytenet = { wally = "ffrostflame/bytenet", version = "^0.4.6" }
 trove = { wally = "sleitnick/trove", version = "^1.8.0" }
 typed-promise = { wally = "lukadev-0/typed-promise", version = "^4.0.2" }
 typed_logger = { name = "patamigo0/typed_logger", version = "^0.1.0" }
+knit = { wally = "sleitnick/knit", version = "^1.7.0" }
 
 
 [dev_dependencies]

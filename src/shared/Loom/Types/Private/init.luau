@@ -15,5 +15,6 @@ export type BuilderOptions = BuilderTypes.BuilderOptions
 export type ByteNetSchema = VendorTypes.ByteNetSchema
 export type ByteNetPacket<T> = VendorTypes.ByteNetPacket<T>
 export type ByteNet = VendorTypes.ByteNet
+export type Packet<T> = VendorTypes.Packet<T>
 
 return nil

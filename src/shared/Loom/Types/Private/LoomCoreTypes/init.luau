@@ -1,4 +1,5 @@
 --!strict
+
 local LoomMember = require(script.LoomMember)
 local LoomManager = require(script.LoomManager)
 

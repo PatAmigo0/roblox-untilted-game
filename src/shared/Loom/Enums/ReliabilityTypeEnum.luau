@@ -1,11 +1,9 @@
 --!strict
 
-export type ReliabilityTypeEnum = {
-	Reliable: "reliable",
-	Unreliable: "unreliable",
-}
+local LoomRoot = script.Parent.Parent
+local ReliabilityTypeModule = require(LoomRoot.Types.Public.Enums)
 
-local ReliabilityType: ReliabilityTypeEnum = {
+local ReliabilityType: ReliabilityTypeModule.ReliabilityTypeEnum = {
 	Reliable = "reliable",
 	Unreliable = "unreliable",
 }

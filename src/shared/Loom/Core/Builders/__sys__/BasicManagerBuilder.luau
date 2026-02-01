@@ -1,8 +1,12 @@
 --!strict
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local LoomRoot = script.Parent.Parent.Parent.Parent -- script.__sys__.Builders.Core.Loom
+local typed_logger = require(ReplicatedStorage.RobloxPackages.typed_logger)
 local LoomTypes = require(LoomRoot.Types)
 local Promise = require(LoomRoot.Vendors.Promise)
+
+local logger = typed_logger.new()
 
 local function runLifecycle(item: any, methodName: string): boolean
 	local method = item[methodName]
@@ -87,7 +91,7 @@ function ManagerBuilder._buildManager<T>(options: LoomTypes.BuilderOptions): Loo
 
 		local success, err = Promise.all(promises):await()
 		if not success then
-			warn(`[Loom] Some {ModuleName}s failed to initialize. Error: {err}`)
+			logger:AtWarning():Log(`[Loom] Some {ModuleName}s failed to initialize. Error: {err}`)
 		end
 
 		for _, service in pairs(successfullyInitialized) do
