@@ -9,6 +9,7 @@ type TestController = {
 	Client: typeof(TestServiceDef.Client),
 	LoomInit: (self: TestController) -> (),
 	LoomStart: (self: TestController) -> (),
+	A: (self: TestController) -> (),
 }
 
 local TestController = Loom.CreateController({
@@ -28,5 +29,7 @@ end
 function TestController:LoomStart()
 	print("TestController Started")
 end
+
+function TestController:A() end
 
 return TestController

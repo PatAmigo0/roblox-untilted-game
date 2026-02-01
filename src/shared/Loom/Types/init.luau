@@ -5,8 +5,10 @@ local PrivateTypes = require(script.Private)
 
 -- Public
 export type Service = PublicTypes.Service
-export type ServiceDef = PublicTypes.ServiceDef
 export type Controller = PublicTypes.Controller
+
+export type ServiceDef = PublicTypes.ServiceDef
+export type ControllerDef = PublicTypes.ControllerDef
 export type PacketDef<T> = PublicTypes.PacketDef<T>
 
 -- Private

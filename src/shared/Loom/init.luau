@@ -56,6 +56,12 @@ local function initializeByteNet(def: any)
 	end
 end
 
+--- Use with "!strict" enabled.
+--- Helps to make sure that your schema definition is correct
+function Loom.Definition<T>(def: T & Types.ServiceDef): Types.ServiceDef & T
+	return def
+end
+
 function Loom.RegisterPacket<T>(packetDef: Types.PacketDef<T>): Types.Packet<T>
 	return packetDef :: any
 end
@@ -67,7 +73,7 @@ function Loom.CreateService<T>(def: T & Types.ServiceDef): any
 	return ServiceManager.Register(newService) :: any
 end
 
-function Loom.CreateController(def: any): Types.Controller
+function Loom.CreateController<T>(def: T & Types.ControllerDef): any
 	initializeByteNet(def)
 
 	local newController = Controller.new(def)
@@ -76,12 +82,6 @@ end
 
 function Loom.GetService(name: string)
 	return ControllerManager.Get(name)
-end
-
---- Use with "!strict" enabled.
---- Helps to make sure that your schema definition is correct
-function Loom.Definition<T>(def: T & Types.ServiceDef): Types.ServiceDef & T
-	return def
 end
 
 function Loom.Start()
