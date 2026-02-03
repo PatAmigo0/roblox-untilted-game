@@ -40,6 +40,7 @@ local function initializeByteNet(def: any)
 				local newPacket = Loom.ByteNet.definePacket({
 					value = packetDef.Schema,
 					reliabilityType = packetDef.ReliabilityType,
+					callbackBehavior = packetDef.CallbackBehavior,
 				})
 				packets[methodName] = newPacket
 			end

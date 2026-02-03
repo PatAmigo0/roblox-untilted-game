@@ -12,6 +12,7 @@ local function runLifecycle(item: any, methodName: string): boolean
 	local method = item[methodName]
 
 	if type(method) ~= "function" then
+		logger:AtDebug():Log("Skipping because item is not a function")
 		return true
 	end
 
